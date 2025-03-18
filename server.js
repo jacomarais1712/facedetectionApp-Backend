@@ -14,7 +14,7 @@ const database = knex({
       host: '127.0.0.1',
       port: 5432,
       user: 'postgres',
-      password: 'supersecret',
+      password: '',
       database: 'smart-brain',
     },
   });
@@ -25,6 +25,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json())
 app.use(cors())
 
+app.post('/', (req, res) => { res.send('this is working') });
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, database, bcrypt) });
 app.post('/register', (req, res) => { register.handleRegister(req, res, database, bcrypt) });
 app.get('/profile/:id', (req, res) => { profileid.handleProfile(req, res, database) });
