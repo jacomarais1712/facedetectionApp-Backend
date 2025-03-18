@@ -1,7 +1,7 @@
 
 const handleApiCall = (req, res) => {
-    const PAT = 'd31c108289a54cceb5e5faccc5b90e64';
-    const USER_ID = 'r5t7bwy9suhvy';
+    const PAT = process.env.PAT;
+    const USER_ID = process.env.USERID;
     const APP_ID = 'test';
     const MODEL_ID = 'face-detection';
     const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';
