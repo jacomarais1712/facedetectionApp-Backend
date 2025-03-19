@@ -19,6 +19,11 @@ const database = knex({
       user: 'fdadmin',
       password: process.env.DBPASS,
       database: 'smart_brain_a1s9',
+=======
+      user: 'postgres',
+      password: process.env.DBPASS,
+      database: 'smart-brain',
+>>>>>>> d81db45f49364803ecec5e256cf818ff0b09788d
     },
   });
 
