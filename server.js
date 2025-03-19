@@ -6,8 +6,6 @@ const knex = require('knex');
 const dotenv = require('dotenv')
 dotenv.config();
 
-console.log(process.env.DBPASS);
-
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profileid = require('./controllers/profileid');
