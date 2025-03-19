@@ -6,6 +6,8 @@ const knex = require('knex');
 const dotenv = require('dotenv')
 dotenv.config();
 
+console.log(process.env.DBPASS);
+
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profileid = require('./controllers/profileid');
@@ -19,8 +21,18 @@ const database = knex({
       user: 'fdadmin',
       password: process.env.DBPASS,
       database: 'smart_brain_a1s9',
+      ssl: {
+        rejectUnauthorized: false
+      },
     },
   });
+  database.raw('SELECT 1')
+    .then(() => {
+        console.log('Database connected successfully')
+    })
+    .catch((error) => {
+        console.error('Database connection error:', error.message);
+    });
 
 const app = express();
 
